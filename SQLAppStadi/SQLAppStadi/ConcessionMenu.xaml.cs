@@ -19,9 +19,10 @@ namespace SQLAppStadi
             InitializeComponent();
             using (SQLite.SQLiteConnection db = new SQLite.SQLiteConnection(App.DB_PATH))
             {
-                var theseItems =db.Table<Item>().Where(I => I.ItemName == concession).ToList();
-                var TheseItemObserve = new ObservableCollection<Item>(theseItems);
-                Items = TheseItemObserve;
+                var ThisConsesh =db.Table<Concession>().Where(I => I.Name == concession).FirstOrDefault();
+                var theseItems = db.Table<ConcessionItem>().Where(I => I.ConcessionId == ThisConsesh.Id).ToList();
+                //var TheseItemObserve = new ObservableCollection<Item>(theseItems);
+                //Items = TheseItemObserve;
             }
             
 
@@ -37,6 +38,17 @@ namespace SQLAppStadi
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            var item = (MenuItem)sender;
+            var itemModel = (ConcessionItem)item.CommandParameter;
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

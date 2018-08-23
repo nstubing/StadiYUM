@@ -59,20 +59,20 @@
                Grid.Row="2"
                Placeholder="Section Number" 
                TextColor="#0A2351"
-               Margin="0,0,20,20"
+               Margin="20,0,20,20"
                ></Entry>
         <Entry x:Name="Seat"
                Grid.Row="3"
                Placeholder="Seat Number" 
                TextColor="#0A2351"
-               Margin="0,0,20,20"
+               Margin="20,0,20,20"
                ></Entry>
         <Button Text="Start Ordering" 
                 Grid.Row="4"
                 TextColor="#0A2351" 
                 BackgroundColor="White"
                 Clicked="SeatEntered"
-                Margin="0,0,20,20"
+                Margin="20,0,20,20"
                 ></Button>
 
     </Grid>

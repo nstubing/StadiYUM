@@ -19,16 +19,26 @@ namespace SQLAppStadi
             DB_PATH = fullPath;
             using (SQLite.SQLiteConnection db = new SQLite.SQLiteConnection(DB_PATH))
             {
-                Item concession1 = new Item { ItemName = "AJ Bombers", Price = 117, Image="" };
-                db.Insert(concession1);
-                Item concession2 = new Item { ItemName = "SmokeShack", Price = 118 };
-                db.Insert(concession2);
-                Item concession3 = new Item { ItemName = "J. Agave Tacos", Price = 123 };
-                db.Insert(concession3);
-                Item concession4 = new Item { ItemName = "Specialty Pretzels", Price = 111 };
-                db.Insert(concession4);
-                Item concession5 = new Item { ItemName = "Beer", Price = 119 };
-                db.Insert(concession5);
+                db.DropTable<Concession>();
+                db.DropTable<ConcessionItem>();
+                db.DropTable<Item>();
+                db.DropTable<Order>();
+                db.DropTable<RealUser>();
+                db.CreateTable<Concession>();
+                db.CreateTable<ConcessionItem>();
+                db.CreateTable<Item>();
+                db.CreateTable<Order>();
+                db.CreateTable<RealUser>();
+                //var AJBombers = db.Table<Concession>().Where(c => c.Name == "AJ Bombers").FirstOrDefault();
+                //ConcessionItem concession1 = new ConcessionItem { ConcessionId = (int)AJBombers.Id, ItemId=0  };
+                //db.Insert(concession1);
+                //ConcessionItem concession2 = new ConcessionItem { ConcessionId = (int)AJBombers.Id, ItemId = 1 };
+                //db.Insert(concession2);
+                //ConcessionItem concession3 = new ConcessionItem { ConcessionId = (int)AJBombers.Id, ItemId = 2 };
+                //db.Insert(concession3);
+                //ConcessionItem concession4 = new ConcessionItem { ConcessionId = (int)AJBombers.Id, ItemId = 3 };
+                //db.Insert(concession4);
+                
             }
 
             InitializeComponent();

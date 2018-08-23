@@ -5,7 +5,7 @@ using SQLite;
 
 namespace SQLAppStadi.Model
 {
-    class Stadium
+    public class Stadium
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

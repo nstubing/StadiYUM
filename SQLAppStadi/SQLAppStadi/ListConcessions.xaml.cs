@@ -32,14 +32,9 @@ namespace SQLAppStadi
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var thisItem = (Concession)MyListView.SelectedItem;
-            
-            if (e.Item == null)
-                return;
-            await DisplayAlert("shit",thisItem.Name, "OK");
 
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
+            await Navigation.PushAsync(new ConcessionMenu(thisItem.Name));
         }
-        
+
     }
 }

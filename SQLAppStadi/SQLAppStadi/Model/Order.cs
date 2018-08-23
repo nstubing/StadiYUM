@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace SQLAppStadi.Model
 {
-    class Order
+    public class Order
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-
+        [ForeignKey(typeof(RealUser))]
         public int UserId { get; set; }
 
         public int ItemId { get; set; }

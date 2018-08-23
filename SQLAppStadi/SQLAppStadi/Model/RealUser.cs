@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace SQLAppStadi.Model
 {
@@ -13,5 +14,7 @@ namespace SQLAppStadi.Model
         public string Password { get; set; }
         public int CurrentSection { get; set; }
         public int Seat { get; set; }
+        [OneToMany]
+        public List<Order> Orders { get; set; }
     }
 }

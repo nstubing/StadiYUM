@@ -2,50 +2,46 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SQLAppStadi.ConcessionMenu">
+
+
+
     <ListView x:Name="MyListView"
             ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
 
-        <!--Built in Cells-->
-        <!--<ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding .}" />
-            </DataTemplate>
-        </ListView.ItemTemplate>-->
-
-        <!--Custom View Cells-->
-        
+      
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell >
+                    <ViewCell.ContextActions>
+                        <MenuItem Clicked="Button_Clicked" CommandParameter="{Binding .}" Text="Add To Cart" IsDestructive="True"/>
+                    </ViewCell.ContextActions>
           <StackLayout Padding="5">
               <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
               </Grid>
                 <Image Source="{Binding Image}"
                 Grid.Row="0"
-                Grid.RowSpan="4"
                 Grid.Column="0"
-                Grid.ColumnSpan="2"
                 Aspect="AspectFit"/>
                     <Label Text="{Binding Text}" 
                            Grid.Row="0"
                            Grid.Column="1"/>
-              <S
+                        <!--<Entry x:Name="AmountOfItems" Placeholder="0" 
+                     Grid.Row="1"
+                     Grid.Column="1"
+                               HorizontalOptions="CenterAndExpand"/>-->
+                    </StackLayout>
             
-          </StackLayout>
         </ViewCell>
       </DataTemplate>
+        
     </ListView.ItemTemplate>
     
 
