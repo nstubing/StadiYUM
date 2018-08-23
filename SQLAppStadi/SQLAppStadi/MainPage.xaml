@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SQLAppStadi"
+             x:Class="SQLAppStadi.MainPage" 
+             BackgroundImage="mpbg.jpg"
+             NavigationPage.HasNavigationBar="False">
+    <Grid Padding="20" ColumnSpacing="10" RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Text="StadiYUM"
+               TextColor="#B6922E"
+               HorizontalOptions="Center"
+               Scale="4"
+               ></Label>
+        <Entry x:Name="UsernameEntry" 
+               Grid.Row="2"
+               Placeholder="Username" 
+               TextColor="White" 
+               ></Entry>
+        <Entry x:Name="PasswordEntry"
+               Grid.Row="3"
+               Placeholder="Password" 
+               IsPassword="True" 
+               TextColor="White" 
+               ></Entry>
+        <Button Text="Sign In" 
+                Grid.Row="4"
+                TextColor="#0A2351" 
+                BackgroundColor="White"
+                Clicked="Button_Clicked" 
+                ></Button>
+
+    </Grid>
+    
+    <!--<StackLayout>
+        --><!-- Place new controls here --><!--
+        <StackLayout>
+            <Label Text="StadiYUM" 
+           HorizontalOptions="Center"
+           TextColor="OrangeRed"/>
+            <Button Text="Sign Up" TextColor="White" BackgroundColor="Navy" HorizontalOptions="Center" Clicked="Sign_Up"></Button>
+        </StackLayout>
+        <StackLayout BackgroundColor="Navy" VerticalOptions="End">
+            <Entry x:Name="UsernameEntry" Placeholder="Username" PlaceholderColor="Navy" TextColor="Navy" HorizontalOptions="Center"></Entry>
+            <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" TextColor="Navy" HorizontalOptions="Center"></Entry>
+            <Button Text="Sign In" TextColor="Navy" BackgroundColor="White" Clicked="Button_Clicked" HorizontalOptions="Center"></Button>
+        </StackLayout>
+        
+    </StackLayout>-->
+
+</ContentPage>
